@@ -1,0 +1,10 @@
+<div class="card card-body mb-3" >
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <!-- If ngModel throws an error in the input, import FormsModule into app.module and add it to imports-->
+      <input  type="text" name="text" class="form-control" placeholder="Add a log..." [(ngModel)] = "text">
+    </div>
+    <input type="submit" value="Add log" class="btn btn-light" [disabled]="!this.text">
+    <button (click)="clearState()" type="button" class="btn btn-warning" [hidden]="!this.text">Clear</button>
+  </form>
+</div>
